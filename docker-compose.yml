@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend/src:/app/src
+      - ./backend/migrations:/app/migrations
     ports:
       - 8000:80
     depends_on:

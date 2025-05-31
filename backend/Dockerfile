@@ -30,6 +30,7 @@ COPY --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/pyth
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 
 COPY --chown=appuser:appuser /src /app/src
+COPY --chown=appuser:appuser /migrations /migrations
 COPY --chown=appuser:appuser run.py /app/
 
 ENV PYTHONDONTWRITEBYTECODE=1
