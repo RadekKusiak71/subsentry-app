@@ -29,9 +29,7 @@ RUN useradd -m -r appuser && \
 COPY --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 
-COPY --chown=appuser:appuser /src /app/src
-COPY --chown=appuser:appuser /migrations /migrations
-COPY --chown=appuser:appuser run.py /app/
+COPY --chown=appuser:appuser . /app/
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1 
